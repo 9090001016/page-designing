@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <title>My cart!</title>
+  </head>
+  <body class="bg-light">
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-md-10 col-11 mx-auto">
+                  <div class="row mt-5 gx-3">
+                      <!-- left side div -->
+                      <div class="col-md-12 col-lg-8 col-11 mx-auto main_cart mb-lg-0 mb-5 shadow">
+                          <div class="card p-4">
+                              <h2 class="py-4 font-weight-bold">Cart Items</h2>
+                              <div class="row">
+                                  <div class="col-md-5 col-11 mx-auto bg-white d-flex justify-content-center align-items-center">
+                                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6RKR95ytOyCPwshzrKIuKm-3fMlNkT7bHnc_SXcZKrRGrZ-AZgeVHnLYZDDurf-rf7SVIr2Ra&usqp=CAc" 
+                                      class="img-fluid" alt="cart img">
+                                  </div>
+                                  <!-- cart product details -->
+                                  <div class="col-md-7 col-11 mx-auto px-4 mt-2">
+                                      <div class="row">
+                                          <!-- product name -->
+                                          <div class="col-6 card-title">
+                                              <h1 class="mb-4 product_name">T shirt</h1>
+                                              <p class="mb-2"> COLOR: YELLOW</p>
+                                              <p class="mb-2"> SIZE : M </p>
+                                          </div>
+                                          <!-- pagination -->
+                                          <div class="col-6">
+                                              <ul class="pagination justify-content-end set_quantity">
+                                                  <li class="page-item">
+                                                    <button class="page-link" onclick="decreaseNumber('textbox','itemval')">
+                                                       <i class="fas fa-minus"></i>
+                                                    </button>
+                                                  </li>
+                                                  <li class="page-item">
+                                                      <input type="text" name="" value="0" id="textbox" class="page-link">
+                                                  </li>
+                                                  <li class="page-item">
+                                                    <button class="page-link" onclick="increaseNumber('textbox','itemval')">
+                                                       <i class="fas fa-plus"></i>
+                                                    </button>
+                                                  </li>
+                                              </ul>
+                                          </div>
+                                      </div>
+                                      <!-- remove price -->
+                                      <div class="row">
+                                          <div class="col-8 d-flex justify-content-between remove_wish">
+                                              <p><i class="fas fa-trash-alt">REMOVE ITEMS</i></p>
+                                              <p><i class="fas fa-heart">MOVE TO WISHLIST</i></p>                                              
+                                          </div>
+                                          <div class="col-4 d-flex justify-content-end price_money">
+                                              <h3>$<span id="itemval">0.00</span></h3>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <hr />
+                          <!-- 2ndcart items -->
+                          <div class="card p-4">
+                            <h2 class="py-4 font-weight-bold">Cart Items</h2>
+                            <div class="row">
+                                <div class="col-md-5 col-11 mx-auto bg-white d-flex justify-content-center align-items-center">
+                                    <img src="data:image/jpeg;base64,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" 
+                                    class="img-fluid" alt="cart img">
+                                </div>
+                                <!-- cart product details -->
+                                <div class="col-md-7 col-11 mx-auto px-4 mt-2">
+                                    <div class="row">
+                                        <!-- product name -->
+                                        <div class="col-6 card-title">
+                                            <h1 class="mb-4 product_name">MEN'S JACKET</h1>
+                                            <p class="mb-2"> COLOR: BLACK</p>
+                                            <p class="mb-2"> SIZE : L </p>
+                                        </div>
+                                        <!-- pagination -->
+                                        <div class="col-6">
+                                            <ul class="pagination justify-content-end set_quantity">
+                                                <li class="page-item">
+                                                  <button class="page-link" onclick="decreaseNumber('textbox1','itemval1')">
+                                                     <i class="fas fa-minus"></i>
+                                                  </button>
+                                                </li>
+                                                <li class="page-item">
+                                                    <input type="text" name="" value="0" id="textbox1" class="page-link">
+                                                </li>
+                                                <li class="page-item">
+                                                  <button class="page-link" onclick="increaseNumber('textbox1','itemval1')">
+                                                     <i class="fas fa-plus"></i>
+                                                  </button>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- remove price -->
+                                    <div class="row">
+                                        <div class="col-8 d-flex justify-content-between remove_wish">
+                                            <p><i class="fas fa-trash-alt">REMOVE ITEMS</i></p>
+                                            <p><i class="fas fa-heart">MOVE TO WISHLIST</i></p>                                              
+                                        </div>
+                                        <div class="col-4 d-flex justify-content-end price_money">
+                                            <h3>$<span id="itemval1">0.00</span></h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                      <!-- right side div -->
+                      <div class="col-md-12 col-lg-4 col-11 mx-auto mt-lg-0 mt-md-5">
+                          <div class="right_side p-3 shadow bg-light">
+                              <h2 class="product_name mb-5">The Total Amount Of</h2>
+                              <div class="price_indiv d-flex justify-content-between">
+                                  <p>product amount</p>
+                                  <p>$<span id="product_total_amt">0.00</span></p>
+                              </div> 
+                              <div class="price_indiv d-flex justify-content-between">
+                                <p>shipping charge</p>
+                                <p>$<span id="shipping_charge">10</span></p>
+                              </div> 
+                              <hr />
+                            <div class="total-amt d-flex justify-content-between font-weight-bold">
+                                <p>Total amount</p>
+                                <p>$<span id="total_cart_amt">0.00</span></p>
+                            </div>
+                            <button class="btn btn-primary text-uppercase">CHECKOUT</button>
+                      </div>
+                           <!-- discount part -->
+                           <div class="discount_code mt-3 shadow">
+                               <div class="card">
+                                   <div class="card-body">
+                                       <a class="d-flex justify-content-between" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                           Add a discount code
+                                           <span><i class="fas fa-chevron-down pt-1"></i></span>
+                                       </a>
+                                       <!-- <div class="collapse" id="collapseExample"> -->
+                                           <div class="mt-3">
+                                               <input type="text" name="" id="discount_code1" class="form-control font-weight-bold" placeholder="discount code">
+                                               <small id="error_trw" class="test-dark mt-3"> code is mychoices</small>
+                                           </div>
+                                           <button class="btn btn-primary btn-sm mt-3" onclick="discount_code()">Apply</button>
+                                   </div>
+                               </div>
+                            </div>
+                        <!-- discount code ends -->
+                        <div class="mt-3 shadow p-3 bg-white">
+                            <div class="pt-4">
+                                <h5 class="mb-4">Expected delivery date</h5>
+                                <p>July 27th 2020-july 29th 2020</p>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+    var productamt = document.getElementById('product_total_amt');
+    var total_cart_amt = document.getElementById('total_cart_amt');
+    var shipping_charge = document.getElementById('shipping_charge'); 
+    var discountCode = document.getElementById('discount_code1');
+    const decreaseNumber = (incdec,itemprice) => {
+        var itemval =document.getElementById(incdec);
+        var itemprice =document.getElementById(itemprice);
+        // console.log(itemval.value);
+        if(itemval.value <= 0){
+            itemval.value=0;
+        }else{
+            itemval.value =parseInt(itemval.value)-1;
+            itemval.style.background='#fff';
+            itemval.style.color='#000';
+            itemprice.innerHTML=parseInt(itemprice.innerHTML) - 15;
+            productamt.innerHTML=parseInt(productamt.innerHTML) - 15;
+            total_cart_amt.innerHTML = parseInt(productamt.innerHTML) +  parseInt(shipping_charge.innerHTML);
+        }
+    }
+    const increaseNumber = (incdec,itemprice) => {
+        var itemval =document.getElementById(incdec);
+        var itemprice =document.getElementById(itemprice);
+        if(itemval.value >= 5){
+            itemval.value=5;
+            alert('max 5 allowed');
+            itemval.style.background='red';
+            itemval.style.color='#fff';
+        }else{
+            itemval.value =parseInt(itemval.value)+1;
+            itemprice.innerHTML=parseInt(itemprice.innerHTML) + 15;
+            productamt.innerHTML=parseInt(productamt.innerHTML) + 15;
+            total_cart_amt.innerHTML = parseInt(productamt.innerHTML) +  parseInt(shipping_charge.innerHTML);
+        }
+    }
+    const discount_code =()=>{
+        let totalamtcurr = parseInt(total_cart_amt.innerHTML);
+        let error_trw = document.getElementById('error_trw');
+        if(discountCode.value === 'mychoices'){
+            let newtotalamt = totalamtcurr - 5;
+        total_cart_amt.innerHTML = newtotalamt;   
+        error_trw.innerHTML = "code is valid";
+         }else{
+            error_trw.innerHTML ="Try valid code";
+         }
+        }
+    </script>
+  </body>
+</html>
