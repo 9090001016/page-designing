@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI CALCULATOR</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card ">
+            <div class="card-header text-center">
+                Bmi Calculator
+            </div>
+            <div class="card-body">
+                <form class="w-50 m-auto" onsubmit="return false">
+                    <div class="form-group"> 
+                      <label>Weight</label>
+                      <input type="number" placeholder="weight in kg" required id="weight" class="form-control">
+                    </div>
+                    <div class="form-group"> 
+                        <label>Height</label>
+                        <input type="text" placeholder="Height in feet" required id="height" class="form-control">
+                      </div>
+                    <div class="form-group"> 
+                        <label>Result</label>
+                        <input type="number" id="bmiValue" class="form-control">
+                    </div>
+                    <div>
+                        <button class="btn btn-success" type="submit" onclick="bmivalue()">Click</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    function bmivalue(){
+        var weight = document.getElementById('weight').value;
+        var height = document.getElementById('height').value;
+        height = height * 12;
+        height = height * 0.025;
+        var value = weight /(Math.pow(height,2));
+        var newvalue = Math.round(value);
+        document.getElementById('bmiValue').value = newvalue;
+    }
+</script>
+</body>
+</html>
